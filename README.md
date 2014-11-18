@@ -4,6 +4,8 @@ A boilerplate for site custom plugin. Custom post types, taxonomies, shortcodes 
 
 For information on how plugins work, visit the 'Writing a Plugin' page in the codex: [http://codex.wordpress.org/Writing_a_Plugin](http://codex.wordpress.org/Writing_a_Plugin).
 
+The contents of this directory should be placed in your plugins directory (usually `wp-content/plugins`). Once cloned this directory should no longer be a repo (remove the `.git` directory).
+
 ## site_boilerplate.php
 
 This is the main plugin file. From here all other files are included. The meta info at the top needs to be set with all instances of SITE NAME replaced with your project's name.
