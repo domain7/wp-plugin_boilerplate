@@ -48,6 +48,14 @@ foreach (glob(constant($plugin_dir_constant_name) . "taxonomies/taxonomy-*.php")
 
 
 /**
+ * ACF fields
+ */
+foreach (glob(constant($plugin_dir_constant_name) . "acf_fields/acf-*.php") as $filename) {
+	require_once($filename);
+}
+
+
+/**
  * Includes
  */
 
