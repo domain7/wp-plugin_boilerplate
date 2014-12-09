@@ -48,16 +48,10 @@ foreach (glob(constant($plugin_dir_constant_name) . "taxonomies/taxonomy-*.php")
 
 
 /**
- * ACF fields
- */
-foreach (glob(constant($plugin_dir_constant_name) . "acf_fields/acf-*.php") as $filename) {
-	require_once($filename);
-}
-
-
-/**
  * Includes
  */
 
 // If we're using ACF and JSON-REST-API, add custom fields to the API.
 require_once(constant($plugin_dir_constant_name) . "includes/acf-json-api.php");
+require_once(constant($plugin_dir_constant_name) . "includes/utility.php");
+require_once(constant($plugin_dir_constant_name) . "includes/acf-fields.php");

@@ -42,8 +42,9 @@ function posttype_register_TYPENAME() { // The perameters of your custom post ty
 		'publicly_queryable' => true,
 		'show_ui' => true,
 		'query_var' => true,
-		'rewrite' => true,
+		'rewrite' => true, // Example of customizing rewrite pattern: 'rewrite' => array('slug' => strtolower($plural))
 		'capability_type' => 'post',
+		// 'menu_icon' => 'dashicons-carrot', // Custom post type icons -> https://developer.wordpress.org/resource/dashicons/
 		//'taxonomies' => array('category'), // Uses the custom taxonomy created in this template
 		'has_archive' => true,
 		'supports' => array('title','editor','thumbnail')
