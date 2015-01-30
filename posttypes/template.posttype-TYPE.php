@@ -12,13 +12,18 @@
  */
 
 
-add_action('init', 'posttype_register_TYPENAME', 0);
+add_action('init', function(){
 
-function posttype_register_TYPENAME() { // The perameters of your custom post type.
-	
-	// Labels for your post type. Note that many more are available, as detailed in the codex.
-	$singular = 'TYPENAME (SINGULAR)';
-	$plural = 'TYPENAME (PLURAL)';
+	/*
+		Labels for your post type.
+		Note that many more are available, as detailed in the codex.
+
+		$singular and $plural are the only variables you must set.
+	*/
+		
+	$singular = 'Widget';
+	$plural = 'Widgets';
+
 
 	$labels = array(
 		'name' => _x($plural, 'post type general name'),
@@ -34,7 +39,7 @@ function posttype_register_TYPENAME() { // The perameters of your custom post ty
 		'parent_item_colon' => ''
 	);
 
- 
+
 	// For all available arguments go to http://codex.wordpress.org/Function_Reference/register_post_type
 	$args = array(
 		'labels' => $labels,
@@ -50,8 +55,7 @@ function posttype_register_TYPENAME() { // The perameters of your custom post ty
 		'supports' => array('title','editor','thumbnail')
 	  ); 
 
-	register_post_type('TYPENAME', $args );
-	
-}
+	register_post_type(strtolower($singular), $args);	
 
+}, 0);
 ?>

@@ -1,7 +1,24 @@
 <?php
 
+
 /**
- * This file makes custom fields created with Advanced Custom Fields available in the
+ * ACF Fields
+ *
+ * This uses WP-CLI and the ACF plugin
+ * WP-CLI: http://wp-cli.org/
+ * WP-CLI ACF Plugin: https://github.com/hoppinger/advanced-custom-fields-wpcli
+ */
+
+function acfwpcli_fieldgroup_paths( $paths ) {
+	$paths[$plugin_dir_constant_name] = __DIR__ . '/acf_fields/';
+	return $paths;
+  }
+
+add_filter( 'acfwpcli_fieldgroup_paths', 'acfwpcli_fieldgroup_paths' );
+
+
+/**
+ * Makes custom fields created with Advanced Custom Fields available in the
  * WP Rest API
  * 
  * Source of this method: https://wordpress.org/support/topic/custom-meta-data-2

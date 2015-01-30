@@ -12,17 +12,25 @@
  */
 
 
-add_action('init', 'register_taxonomy_TAX', 0);
+add_action('init', function(){
 
-function register_taxonomy_TAX() {
+	/*
+	 * These variables define the taxonomy slug, labels, and the post type to be used with.
+	 * These must be set.
+	 */
+
+	$slug = 'taxonomy';
+	$singular = 'Term';
+	$plural = 'Terms';
+	$type = 'album';
 
 	$taxonomy = array(
 		
 		// The slug for your custom taxonomy
-		'name' => 'TAX',
+		'name' => $slug,
 
 		// Which post types can use this taxonomy?
-		'post_types' => array('TYPE'), // <--- CHANGE ME TOO
+		'post_types' => array($type), // <--- CHANGE ME TOO
 
 		// Configuration for the taxonomy. 
 		'args' => array(
@@ -31,13 +39,13 @@ function register_taxonomy_TAX() {
 
 			// Labels are highly configurable
 			// Full into: http://codex.wordpress.org/Function_Reference/register_taxonomy#Arguments
-			"label" => "Taxonomy name",
-			"singular_label" => "Taxonomy term name"
+			"label" => $singular,
+			"singular_label" => $plural
 			)
 		);
 
 	register_taxonomy($taxonomy['name'], $taxonomy['post_types'], $taxonomy['args']);
-	
-}
+
+}, 0);
 
 ?>
