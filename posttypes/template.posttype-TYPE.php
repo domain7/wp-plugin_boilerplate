@@ -55,7 +55,7 @@ add_action('init', function(){
 		'supports' => array('title','editor','thumbnail')
 	  ); 
 
-	register_post_type(strtolower($singular), $args);	
+	register_post_type(str_replace(" ", "_", strtolower($singular)), $args);	
 
 }, 0);
 ?>
