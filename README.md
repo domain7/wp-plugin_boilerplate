@@ -24,7 +24,7 @@ Each custom taxonomy is defined in its own file in the `/taxonomies` directory. 
 
 ## Includes Folder
 
-### `includes/options.php`
+`includes/options.php`
 
 #### ACF Options Pages ([link](http://www.advancedcustomfields.com/resources/acf_add_options_page))
 
