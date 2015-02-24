@@ -2,6 +2,7 @@
 
 	if( function_exists('acf_add_options_page') ) {
 
+		// http://www.advancedcustomfields.com/resources/acf_add_options_page/#parameters
 		acf_add_options_page(array(
 			'page_title' 	=> 'Site Settings',
 			'menu_title' 	=> 'Site Settings',
