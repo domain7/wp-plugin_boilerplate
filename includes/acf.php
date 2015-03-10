@@ -10,12 +10,12 @@
  */
 
 function acfwpcli_fieldgroup_paths( $paths ) {
-	$paths[$plugin_dir_constant_name] = __DIR__ . '/acf_fields/';
+	global $plugin_dir_constant_name;
+	$paths[strtolower($plugin_dir_constant_name)] = __DIR__ . '/acf_fields/';
 	return $paths;
   }
 
 add_filter( 'acfwpcli_fieldgroup_paths', 'acfwpcli_fieldgroup_paths' );
-
 
 /**
  * Makes custom fields created with Advanced Custom Fields available in the

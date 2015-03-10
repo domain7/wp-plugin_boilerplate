@@ -80,4 +80,4 @@ require_once(constant($plugin_dir_constant_name) . "includes/acf.php");
 	To use once the files are in place, open admin.php and uncomment the add_action calls
 
    */
-require_once(constant($plugin_dir_constant_name) . "includes/admin.php");
+//require_once(constant($plugin_dir_constant_name) . "includes/admin.php");
