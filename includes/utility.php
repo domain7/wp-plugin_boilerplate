@@ -14,6 +14,19 @@ function pre_var($var){
 }
 
 
+/*
+ *	The only thing it does is to var_dump an variable but wraps an pre-tag around it.
+ */
+
+function pre_dump() {
+	foreach( func_get_args() as $item ) {
+		echo '<pre>';
+		var_dump($item);
+		echo '</pre>';
+	}
+}
+
+
 /**
  * Extend default arguments
  * http://gabrieleromanato.name/php-using-associative-arrays-to-handle-default-function-arguments/
