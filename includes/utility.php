@@ -5,8 +5,8 @@
  * pre_var() - used for viewing/debugging objects
  */
 
-function pre_var($var){
-	if ( isset($var) ) {
+function pre_var(){
+	foreach( func_get_args() as $var ) {
 		echo '<pre>';
 			print_r($var);
 		echo '</pre>';
