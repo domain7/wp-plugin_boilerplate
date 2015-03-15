@@ -47,7 +47,7 @@ add_action('init', function(){
 		'publicly_queryable' => true,
 		'show_ui' => true,
 		'query_var' => true,
-		'rewrite' => true, // Example of customizing rewrite pattern: 'rewrite' => array('slug' => strtolower($plural))
+		'rewrite' => array('slug' => str_replace(" ", "_", strtolower($plural))), // Cal be true or more custom
 		'capability_type' => 'post',
 		// 'menu_icon' => 'dashicons-carrot', // Custom post type icons -> https://developer.wordpress.org/resource/dashicons/
 		//'taxonomies' => array('category'), // Uses the custom taxonomy created in this template
