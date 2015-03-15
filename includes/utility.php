@@ -5,10 +5,23 @@
  * pre_var() - used for viewing/debugging objects
  */
 
-function pre_var($var){
-	if ( isset($var) ) {
+function pre_var(){
+	foreach( func_get_args() as $var ) {
 		echo '<pre>';
 			print_r($var);
+		echo '</pre>';
+	}
+}
+
+
+/*
+ *	The only thing it does is to var_dump an variable but wraps an pre-tag around it.
+ */
+
+function pre_dump() {
+	foreach( func_get_args() as $item ) {
+		echo '<pre>';
+		var_dump($item);
 		echo '</pre>';
 	}
 }
