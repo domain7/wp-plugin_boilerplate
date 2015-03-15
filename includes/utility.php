@@ -47,6 +47,3 @@ function extend_args($args, $defaults = array()) {
 
 	return $result;
 }
-
-
-?>

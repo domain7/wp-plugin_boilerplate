@@ -38,5 +38,3 @@ function remove_wp_nodes()  {
 }
 
 //add_action( 'admin_bar_menu', 'remove_wp_nodes', 999 );
-
-?>

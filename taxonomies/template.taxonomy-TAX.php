@@ -47,5 +47,3 @@ add_action('init', function(){
 	register_taxonomy($taxonomy['name'], $taxonomy['post_types'], $taxonomy['args']);
 
 }, 0);
-
-?>

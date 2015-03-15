@@ -43,5 +43,3 @@ function addACFToJSONAPI($postaray, $postdata, $context){
 if ( is_plugin_active('json-rest-api/plugin.php') ) {
 	add_filter('json_prepare_post', 'addACFToJSONAPI',10, 3);	
 }
-
-?>

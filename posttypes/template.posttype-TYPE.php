@@ -58,4 +58,3 @@ add_action('init', function(){
 	register_post_type(str_replace(" ", "_", strtolower($singular)), $args);	
 
 }, 0);
-?>

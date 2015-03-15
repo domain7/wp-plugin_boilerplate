@@ -60,6 +60,3 @@ function d7_admin_post_thumbnail_html( $output, $post_id ) {
 }
 
 add_filter('admin_post_thumbnail_html', 'd7_admin_post_thumbnail_html', 10, 2 );
-
-
-?>
