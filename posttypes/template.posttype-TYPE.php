@@ -58,3 +58,21 @@ add_action('init', function(){
 	register_post_type(str_replace(" ", "_", strtolower($singular)), $args);	
 
 }, 0);
+
+
+/**
+ * Example of chaning the 'Enter title here' text. Set the post type and the new title.
+ * This will be moved to a permenant place for snippets once that is established.
+ */ 
+/*add_filter('enter_title_here', function($title){
+
+     $screen = get_current_screen();
+ 
+     if  ( 'POST_TYPE' == $screen->post_type ) {
+          $title = 'NEW TEXT HERE';
+     }
+ 
+     return $title;
+
+});
+*/
