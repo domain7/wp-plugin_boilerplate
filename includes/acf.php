@@ -2,34 +2,39 @@
 
 
 /**
- * ACF Fields
- *
- * This uses WP-CLI and the ACF plugin
- * WP-CLI: http://wp-cli.org/
- * WP-CLI ACF Plugin: https://github.com/hoppinger/advanced-custom-fields-wpcli
+ * Allow ACF fields to be stored in the plugin when exported
+ * This uses WP-CLI and the WP-CLI ACF plugin
+ * 
+ * @package d7
+ * @subpackage boilerplate-plugin_filters+hooks
+ * 
+ * @link http://wp-cli.org WP-CLI
+ * @link https://github.com/hoppinger/advanced-custom-fields-wpcli WP-CLI ACF Plugin
  */
-
-function acfwpcli_fieldgroup_paths( $paths ) {
+function d7_acfwpcli_fieldgroup_paths( $paths ) {
 	global $plugin_dir_constant_name;
 	$paths[strtolower($plugin_dir_constant_name)] = __DIR__ . '/acf_fields/';
 	return $paths;
   }
 
-add_filter( 'acfwpcli_fieldgroup_paths', 'acfwpcli_fieldgroup_paths' );
+add_filter( 'acfwpcli_fieldgroup_paths', 'd7_acfwpcli_fieldgroup_paths' );
 
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 /**
  * Makes custom fields created with Advanced Custom Fields available in the
  * WP Rest API
  * 
- * Source of this method: https://wordpress.org/support/topic/custom-meta-data-2
- * WP Rest API: http://wp-api.org/
- * Advancec CUstom Fields: www.advancedcustomfields.com/resources 
+ * @package d7
+ * @subpackage boilerplate-plugin_filters+hooks
+ * 
+ * @link http://wp-api.org WP JSON API documentation
+ * @link http://codex.wordpress.org/Function_Reference/is_plugin_active is_plugin_active
+ * @link http://www.advancedcustomfields.com/resources ACF Resources
+ * @link https://wordpress.org/support/topic/custom-meta-data-2 Source for this technique
+ * @internal only used as `json_prepare_post` filter
+ * 
  */
-
-// Required to use is_plugin_active() - http://codex.wordpress.org/Function_Reference/is_plugin_active
-include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-
-function addACFToJSONAPI($postaray, $postdata, $context){
+function d7_add_acf_to_json_api($postaray, $postdata, $context){
 
 	if ( function_exists('get_fields') ) {
 		$custom_fields = $postdata['ID'];
@@ -41,5 +46,5 @@ function addACFToJSONAPI($postaray, $postdata, $context){
 }
 
 if ( is_plugin_active('json-rest-api/plugin.php') ) {
-	add_filter('json_prepare_post', 'addACFToJSONAPI',10, 3);	
+	add_filter('json_prepare_post', 'd7_add_acf_to_json_api',10, 3);	
 }

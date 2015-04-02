@@ -2,10 +2,20 @@
 
 
 /**
- * pre_var() - used for viewing/debugging objects
+ * Used for viewing/debugging objects and arrays. Does a `print_r()` wrapped
+ * in `pre` tags.
+ * 
+ * ### Usage
+ * <code>
+ * pre_var($post);
+ * </code>
+ * 
+ * @package d7
+ * @subpackage utility
+ * @param mixed $var 	The variable to explore
+ * 
  */
-
-function pre_var(){
+function pre_var($var = false){
 	foreach( func_get_args() as $var ) {
 		echo '<pre>';
 			print_r($var);
@@ -14,25 +24,41 @@ function pre_var(){
 }
 
 
-/*
- *	The only thing it does is to var_dump an variable but wraps an pre-tag around it.
+/**
+ * Used for viewing/debugging objects and arrays. Does a `var_dump()` wrapped
+ * in `var_dump` tags.
+ * 
+ * ### Usage
+ * <code>
+ * pre_dump($post);
+ * </code>
+ * 
+ * @package d7
+ * @subpackage utility
+ * @param mixed $var 	The variable to explore
+ * 
  */
-
-function pre_dump() {
-	foreach( func_get_args() as $item ) {
+function pre_dump($var = false) {
+	foreach( func_get_args() as $var ) {
 		echo '<pre>';
-		var_dump($item);
+			var_dump($var);
 		echo '</pre>';
 	}
 }
 
 
 /**
- * Extend default arguments
- * http://gabrieleromanato.name/php-using-associative-arrays-to-handle-default-function-arguments/
- * Allows you to pass associative arrays to template functions with defaults
+ * Extend default arguments. Allows you to pass associative arrays to template functions with defaults,
+ * and merge in with passed in args.
+ * 
+ * @package d7
+ * @subpackage utility
+ * 
+ * @param array $args 	Associative array of arguments to merge
+ * 
+ * @link http://gabrieleromanato.name/php-using-associative-arrays-to-handle-default-function-arguments/
+ * 
  */
-
 function extend_args($args, $defaults = array()) {
 
 	if ( is_object( $args ) ) {

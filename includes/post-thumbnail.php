@@ -4,8 +4,12 @@
  * These filters are used to change the admin text for post thumbnails.
  * This is useful when 'Add show poster' for example, might be more usefual than
  * 'Set featured image' 
+ * 
+ * @package d7
+ * @subpackage boilerplate-plugin_filters+hooks
+ * @internal only called as `gettext` filter
+ *
  */
-
 function d7_change_post_thumbnail_text( $translated_text, $untranslated_text, $domain ) {
 
   global $typenow;
@@ -48,7 +52,14 @@ function d7_change_post_thumbnail_text( $translated_text, $untranslated_text, $d
 
 add_filter('gettext', 'd7_change_post_thumbnail_text', 20, 3);
 
-
+/**
+ * Changes more text around featured images to allow this to be more customzied
+ * 
+ * @package d7
+ * @subpackage boilerplate-plugin_filters+hooks
+ * @internal only called as `admin_post_thumbnail_html` filter
+ *
+ */
 function d7_admin_post_thumbnail_html( $output, $post_id ) {
   $types_to_change = array('');
   if ( in_array(get_post_type($post_id), $types_banner) ) {
