@@ -73,3 +73,19 @@ function extend_args($args, $defaults = array()) {
 
 	return $result;
 }
+
+
+/**
+ * Check if the site is a local development site. Useful for excluding Google Analytics on local.
+ * 
+ * @package d7
+ * @subpackage utility
+ * 
+ * @todo make this more bullet proof, also exclude staging.
+ * 
+ * @return bool
+ * 
+ */
+function is_local() {
+	return $_SERVER['SERVER_ADDR'] == '127.0.0.1';
+}
