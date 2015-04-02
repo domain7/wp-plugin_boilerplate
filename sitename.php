@@ -67,7 +67,7 @@ require_once(constant($plugin_dir_constant_name) . "includes/acf.php");
 	post-thumbnail.php allows you to customize the admin text for post thumbnails
 	Uncomment to use
 	*/
-//require_once(constant($plugin_dir_constant_name) . "includes/post-thumbnail.php");
+require_once(constant($plugin_dir_constant_name) . "includes/post-thumbnail.php");
 
 
 /* 
