@@ -6,6 +6,10 @@ For information on how plugins work, visit the 'Writing a Plugin' page in the co
 
 The contents of this directory should be placed in your plugins directory (usually `wp-content/plugins`). Once cloned this directory should no longer be a repo (remove the `.git` directory).
 
+## Function reference
+
+Please refer to this project's function reference documentation: http://domain7.github.io/wp-plugin_boilerplate
+
 ## sitename.php
 
 This is the main plugin file. From here all other files are included. The meta info at the top needs to be set with all instances of `SITE NAME` & `sitename` replaced with your project's name.
