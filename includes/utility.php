@@ -26,7 +26,7 @@ function pre_var($var = false){
 
 /**
  * Used for viewing/debugging objects and arrays. Does a `var_dump()` wrapped
- * in `var_dump` tags.
+ * in `pre` tags.
  * 
  * ### Usage
  * <code>
