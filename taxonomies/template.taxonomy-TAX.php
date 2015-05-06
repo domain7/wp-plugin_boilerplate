@@ -39,8 +39,8 @@ add_action('init', function(){
 
 			// Labels are highly configurable
 			// Full into: http://codex.wordpress.org/Function_Reference/register_taxonomy#Arguments
-			"label" => $singular,
-			"singular_label" => $plural
+			"label" => $plural,
+			"singular_label" => $singular
 			)
 		);
 
