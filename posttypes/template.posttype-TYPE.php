@@ -49,6 +49,8 @@ add_action('init', function(){
 		'show_ui' => true,
 		'query_var' => true,
 		'rewrite' => array('slug' => str_replace(" ", "_", strtolower($plural))), // Cal be true or more custom
+		'show_in_rest' => true,
+		'rest_base' => str_replace(" ", "_", strtolower($plural)),
 		'capability_type' => 'post',
 		// 'menu_icon' => 'dashicons-carrot', // Custom post type icons -> https://developer.wordpress.org/resource/dashicons/
 		//'taxonomies' => array('category'), // Uses the custom taxonomy created in this template
